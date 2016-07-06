@@ -1,0 +1,19 @@
+<div id="block-webform-client-block-41" class="block block-webform">
+    <div class="block_title">Написать нам</div>
+    <div class="content">
+        <div id="webform-ajax-wrapper-41">
+
+            [[!AjaxForm?
+            &snippet=`FormIt`
+            &form=`forms-message__tpl`
+            &hooks=`recaptchav2,email`
+            &emailSubject=`Сообщение с сайта: [[#[[++setting]].site__name]]`
+            &emailTo=`[[++emailsender]]`
+            &validate=`g-recaptcha-response:required,name:required:minLength=^3^`
+            &validationErrorMessage=`В форме содержатся ошибки!`
+            &successMessage=`Сообщение успешно отправлено`
+            ]]
+
+        </div>
+    </div>
+</div>

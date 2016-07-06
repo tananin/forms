@@ -1,0 +1,45 @@
+[[-
+-------------------------------------------------------------------------------------------------------
+Формы на сайте
+-------------------------------------------------------------------------------------------------------
+
+1. Устанавливаем FormIt, AjaxForm, reCaptcha
+2. Подключаем свежую версию JQuery
+3. Заходим на сайт Гугла и генерируем ключи
+4. Прописываем ключи в системных настройках
+5. Создаём форму
+
+
+
+Плэйсхолдэры
+-------------------------------------------------------------------------------------------------------
+[[++emailsender]]                       Email в системных настройках
+[[#[[++setting]].site__name]]           Email указанный в настройках сайта
+
+
+[[!recaptchav2_render]]                 reCapcha вызов
+[[!+fi.error.recaptchav2_error]]        сообщение о ошибки
+
+[[+fi.success:is=`1`:then=`<div class="alertalert-success">[[+fi.successMessage]]</div>`]]
+[[+fi.validation_error:is=`1`:then=`<div class="alertalert-danger">[[+fi.validation_error_message]]</div>`]]
+
+
+
+
+AjaxForm с проверкой reCapchi
+-------------------------------------------------------------------------------------------------------
+[[!AjaxForm?
+&snippet=`FormIt`
+&form=`form-zakaz__tpl`
+&hooks=`recaptchav2,email`
+&emailSubject=`Заказ с сайта: [[#[[++setting]].site__name]]`
+&emailTo=`[[++emailsender]]`
+&validate=`g-recaptcha-response:required,name:required:minLength=^3^,phone:required:minLength=^9^`
+&validationErrorMessage=`В форме содержатся ошибки!`
+&successMessage=`Сообщение успешно отправлено`
+]]
+=======================================================================================================
+]]
+
+
+

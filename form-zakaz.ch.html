@@ -1,0 +1,26 @@
+[[-
+Ajax вызов формы
+
+[[!AjaxForm?
+&snippet=`FormIt`
+&form=`form-zakaz__tpl`
+&hooks=`recaptchav2,email`
+&emailSubject=`Заказ с сайта: [[#[[++setting]].site__name]]`
+&emailTo=`[[++emailsender]]`
+&validate=`g-recaptcha-response:required,name:required:minLength=^3^,phone:required:minLength=^9^`
+&validationErrorMessage=`В форме содержатся ошибки!`
+&successMessage=`Сообщение успешно отправлено`
+]]
+
+]]
+
+[[!AjaxForm?
+&snippet=`FormIt`
+&form=`form-zakaz__tpl`
+&hooks=`recaptchav2,email`
+&emailSubject=`Заказ с сайта: [[#[[++setting]].site__name]]`
+&emailTo=`[[++emailsender]]`
+&validationErrorMessage=`В форме содержатся ошибки!`
+&successMessage=`Сообщение успешно отправлено`
+]]
+
